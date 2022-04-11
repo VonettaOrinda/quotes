@@ -1,4 +1,4 @@
-import { Quote } from '@angular/compiler';
+// import { Quote } from '@angular/compiler';
 import { Component, OnInit, Output,EventEmitter } from '@angular/core';
 import { Quotes } from '../quotes';
 
@@ -10,12 +10,12 @@ import { Quotes } from '../quotes';
 })
 export class QuoteFormComponent implements OnInit {
   Quoted= new Quotes( 0,"","","","",0,0);
-  @Output() add= new EventEmitter<Quote>()
+  @Output() add= new EventEmitter<Quotes>()
   
 
   addQuote(){
-    this.addQuote.emit(this.Quoted);
-    // this.Quoted= new Quotes(0,"","", new Date()0,0,0);
+    this.add.emit(this.Quoted);
+    this.Quoted= new Quotes (0,"","","", "",0,0);
   }
 
   constructor() { }

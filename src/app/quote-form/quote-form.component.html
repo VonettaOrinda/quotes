@@ -4,12 +4,12 @@
     <form (ngSubmit)="addQuote();quotesForm.resetForm({})" #quotesForm="ngForm"> 
         <div class="form-group">
             <label for="name">Your Name</label>
-            <input type="text" class="form-control" id="name" [(ngModel)]="Quoted.name" name="name" #name="ngModel" minlength="3">
+            <input type="text" class="form-control" id="name" [(ngModel)]="Quoted.author" name="name" #name="ngModel" minlength="3">
             <div *ngIf="name.invalid && name.dirty" class=" alert alert-danger">
-                <div *ngIf="name.errors.required">
+                <div *ngIf="name.errors">
                     Your name is required.
                 </div>
-                <div *ngIf="name.errors.minlength">
+                <div *ngIf="name.errors">
                     Name is atleast 3 characters long.
                 </div>
             </div>
@@ -17,9 +17,9 @@
 
         <div class="form-group">
             <label for="name">Quote Title</label>
-            <input type="text" required class="form-control" id="title" [(ngModel)]="quoted.title" name="title" #title='ngModel'>
+            <input type="text" required class="form-control" id="title" [(ngModel)]="Quoted.quote" name="title" #title='ngModel'>
             <div *ngIf="title.invalid && title.dirty" class="alert alert-danger">
-              <div *ngIf="title.errors.required">
+              <div *ngIf="title.errors">
                   Title is required.
               </div>
             </div>
@@ -27,9 +27,9 @@
        
         <div class="form-group">
             <label for="description">Quote</label>
-            <textarea class="form-control" id="quote" rows="2" required [(ngModel)]="quoted.quote" name="quote" #quote='ngModel'></textarea>
+            <textarea class="form-control" id="quote" rows="2" required [(ngModel)]="Quoted.quote" name="quote" #quote='ngModel'></textarea>
             <div *ngIf="quote.invalid && quote.dirty" class="alert alert-danger">
-              <div *ngIf="quote.errors.required">
+              <div *ngIf="quote.errors">
                   Quote can not be empty.
               </div>
             </div>
@@ -37,9 +37,9 @@
 
         <div class="form-group">
             <label for="name">Quote Author</label>
-            <input type="text" required class="form-control" id="author"[(ngModel)]="quoted.author" name="author" #author='ngModel'>
+            <input type="text" required class="form-control" id="author"[(ngModel)]="Quoted.author" name="author" #author='ngModel'>
             <div *ngIf="title.invalid && title.dirty" class="alert alert-danger">
-              <div *ngIf="title.errors.required">
+              <div *ngIf="title.errors">
                   Author Name is required.
               </div>
             </div>
