@@ -11,12 +11,21 @@ import { Quotes } from '../quotes';
   styleUrls: ['./quote-details.component.scss']
 })
 export class QuoteDetailsComponent implements OnInit {
-  // @Input() quotes: Quote;
-  // @Output() isComplete = new EventEmitter<boolean>();
+  [x: string]: any;
+  // @Input()anyQuotes = new this['Quotes'];
+  @Output() isComplete = new EventEmitter<boolean>();
+  
 
-  // quoteDelete(complete: boolean) {
-  //   this.isComplete.emit(complete);
-  // }
+  quoteDelete(complete: boolean) {
+    this.isComplete.emit(complete);
+    // this.Quotes.emit(complete)
+  
+    
+   }
+
+  
+
+ 
   
   constructor() { }
 

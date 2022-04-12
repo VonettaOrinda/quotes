@@ -9,16 +9,24 @@ import { Quotes } from '../quotes';
   styleUrls: ['./quote-form.component.scss']
 })
 export class QuoteFormComponent implements OnInit {
-  Quoted= new Quotes( 0,"","","","","",0,0);
+  
   @Output() add= new EventEmitter<Quotes>()
+  newQuote= new Quotes( 0,"","","","","",0,0);
+  newQuotes: Quotes | undefined;
   
 
-  addQuote(){
-    this.add.emit(this.Quoted)
-    this.Quoted= new Quotes (0,"","","", "",'',0,0);
-  }
+  
+  // newQuote(newQuote: any) {
+  //   throw new Error('Method not implemented.');
+  // }
 
   constructor() { }
+  addQuote(){
+    this.add.emit(this.newQuotes);
+    
+  }
+
+  
 
   ngOnInit() {
   }

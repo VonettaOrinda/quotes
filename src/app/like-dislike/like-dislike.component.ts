@@ -6,6 +6,15 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./like-dislike.component.scss']
 })
 export class LikeDislikeComponent implements OnInit {
+  numberOfLikes: number = 0;
+  numberOfDislikes:number=0;
+
+  likeButtonClick() {
+    this.numberOfLikes++;
+  }
+  dislikeButtonClick() {
+    this.numberOfLikes--;
+  }
 
   constructor() { }
 

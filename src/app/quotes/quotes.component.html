@@ -1,5 +1,9 @@
-<ul *ngFor="let quote of quotes">
-    <li> {{quote.quote}} <span class="text-primary"> {{quote.author}}</span><span pan class="text-primary" ml-10>Date posted{{quote.date}}</span><span class="text-primary" ml-10>like{{quote.upvotes}}</span><span class="text-warning" ml-10>Dislike{{quote.downvotes}}></span></li>
-
+<ul *ngFor="let quote of quotes;let i=index">
+    <li> {{quote.quote}} <span class="text-primary"> {{quote.author}}</span></li>
+    <app-quote-details></app-quote-details>
+    <app-like-dislike></app-like-dislike>
+   
 </ul>
+<p *ngIf="quotes.length> 5"> You have too many quotes</p>
+
 
