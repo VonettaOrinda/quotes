@@ -15,16 +15,7 @@
             </div>
         </div>
 
-        <div class="form-group">
-            <label for="name">Quote Title</label>
-            <input type="text" required class="form-control" id="title" [(ngModel)]="Quoted.quote" name="title" #title='ngModel'>
-            <div *ngIf="title.invalid && title.dirty" class="alert alert-danger">
-              <div *ngIf="title.errors">
-                  Title is required.
-              </div>
-            </div>
-        </div>
-       
+           
         <div class="form-group">
             <label for="description">Quote</label>
             <textarea class="form-control" id="quote" rows="2" required [(ngModel)]="Quoted.quote" name="quote" #quote='ngModel'></textarea>
@@ -38,11 +29,7 @@
         <div class="form-group">
             <label for="name">Quote Author</label>
             <input type="text" required class="form-control" id="author"[(ngModel)]="Quoted.author" name="author" #author='ngModel'>
-            <div *ngIf="title.invalid && title.dirty" class="alert alert-danger">
-              <div *ngIf="title.errors">
-                  Author Name is required.
-              </div>
-            </div>
+   
         </div>
 
        
